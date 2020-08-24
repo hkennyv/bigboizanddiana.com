@@ -4,29 +4,8 @@ const client = new Discord.Client();
 
 const { DISCORD_GUILD_ID, DISCORD_BOT_TOKEN } = process.env;
 
-async function buildData(channels) {
-  const data = {};
-
-  // fetch the messages for each channel and build the dataset
-  await Promise.all(
-    channels.map(async (channel) => {
-      try {
-        // there is a undocumented limit of 100. past that, it throws a
-        // DiscordAPIError
-        const messages = await channel.messages.fetch({ limit: 100 });
-        console.log("===");
-        console.log(messages.first());
-        console.log("===");
-        data[channel.name] = { size: messages.size };
-      } catch (err) {
-        console.log(`Bot doesn't have access to: #${channel.name}`);
-      }
-    })
-  );
-
-  return data;
-}
-
+// TODO: modify this to take in a date range and return messages within that
+// date range
 async function getMessages(channels) {
   // outputs the messages in the following format:
   // data = {
@@ -51,16 +30,6 @@ async function getMessages(channels) {
   return data;
 }
 
-function getUserStats(data) {
-  // want to output the user stats in the following format:
-  // stats = {
-  //   khuynh: {
-  //
-  //   }
-  // }
-  return 0;
-}
-
 function getChannelStats(channelMessages) {
   const channelStats = {};
 
@@ -73,39 +42,46 @@ function getChannelStats(channelMessages) {
   return channelStats;
 }
 
-function getUserStats(channelMessages) {
-  const userStats = {};
-  channelMessages.forEcah((msg) => {});
+function getData() {
+  return new Promise((resolve, reject) => {
+    client.once("ready", async () => {
+      const guildId = DISCORD_GUILD_ID;
+      const guild = await client.guilds.fetch(guildId);
+      const channels = guild.channels.cache
+        .filter((channel) => channel.type === "text")
+        .array();
 
-  return userStats;
+      // Get messages
+      // NOTE: this could be an issue if there are large amounts of messages in the
+      // time range
+      const messages = await getMessages(channels);
+      const channelStats = Object.entries(messages)
+        .map((entry) => ({
+          stats: getChannelStats(entry[1].messages),
+          channel: entry[0],
+        }))
+        .reduce((obj, item) => {
+          obj[item.channel] = item.stats;
+          return obj;
+        }, {});
+
+      // finish and gracefully exit
+      client.destroy();
+
+      // debug channelStats
+      console.log(channelStats);
+
+      // return channelStats;
+      resolve({ data: channelStats });
+    });
+
+    client.login(DISCORD_BOT_TOKEN);
+  });
 }
 
-client.once("ready", async () => {
-  const guildId = DISCORD_GUILD_ID;
-  const guild = await client.guilds.fetch(guildId);
-  const channels = guild.channels.cache
-    .filter((channel) => channel.type === "text")
-    .array();
-
-  // Get messages
-  // NOTE: this could be an issue if there are large amounts of messages in the
-  // time range
-  const messages = await getMessages(channels);
-  const channelStats = Object.entries(messages)
-    .map((entry) => ({
-      stats: getChannelStats(entry[1].messages),
-      channel: entry[0],
-    }))
-    .reduce((obj, item) => {
-      obj[item.channel] = item.stats;
-      return obj;
-    }, {});
-
-  // finish and gracefully exit
-  client.destroy();
-
-  // debug channelStats
-  console.log(channelStats);
-});
-
-client.login(DISCORD_BOT_TOKEN);
+// TODO: modify this to take in a date-range query params and pass that to
+// `getData`
+exports.handler = async (req, res) => {
+  const data = await getData();
+  res.status(200).send(data);
+};
