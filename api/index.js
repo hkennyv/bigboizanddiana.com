@@ -31,15 +31,27 @@ async function getMessages(channels) {
 }
 
 function getChannelStats(channelMessages) {
-  const channelStats = {};
+  const stats = {};
 
   channelMessages.forEach((msg) => {
     const { username } = msg.author;
-    if (username in channelStats) channelStats[username] += 1;
-    else channelStats[username] = 1;
+    if (username in stats) stats[username] += 1;
+    else stats[username] = 1;
   });
 
-  return channelStats;
+  const users = getUserData(channelMessages);
+
+  return { stats, users };
+}
+
+function getUserData(messages) {
+  const uniqueUsers = [...new Set(messages.map((msg) => msg.author))];
+  const userData = uniqueUsers.map((author) => ({
+    username: author.username,
+    avatarURL: author.displayAvatarURL(),
+  }));
+
+  return userData;
 }
 
 function getData() {
@@ -72,7 +84,13 @@ function getData() {
       console.log(channelStats);
 
       // return channelStats;
-      resolve({ data: channelStats });
+      resolve({
+        data: {
+          channels: channelStats,
+          guild: guild.name,
+          guildIconURL: guild.iconURL(),
+        },
+      });
     });
 
     client.login(DISCORD_BOT_TOKEN);
