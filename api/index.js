@@ -56,7 +56,7 @@ function getUserData(messages) {
   return userData;
 }
 
-async function getData() {
+ function getData() {
   // create new discord client
   const client = new Discord.Client();
 
