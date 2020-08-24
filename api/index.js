@@ -1,6 +1,5 @@
 require("dotenv").config();
 const Discord = require("discord.js");
-const client = new Discord.Client();
 
 const { DISCORD_GUILD_ID, DISCORD_BOT_TOKEN } = process.env;
 
@@ -57,9 +56,12 @@ function getUserData(messages) {
   return userData;
 }
 
-function getData() {
+async function getData() {
+  // create new discord client
+  const client = new Discord.Client();
+
   return new Promise((resolve, reject) => {
-    client.once("ready", async () => {
+    client.on("ready", async () => {
       const guildId = DISCORD_GUILD_ID;
       const guild = await client.guilds.fetch(guildId);
       const channels = guild.channels.cache
@@ -80,13 +82,7 @@ function getData() {
           return obj;
         }, {});
 
-      // finish and gracefully exit
-      client.destroy();
-
-      // debug channelStats
-      console.log(channelStats);
-
-      // return channelStats;
+      // resolve stats
       resolve({
         data: {
           channels: channelStats,
@@ -94,6 +90,9 @@ function getData() {
           guildIconURL: guild.iconURL(),
         },
       });
+
+      // finish and gracefully exit
+      client.destroy();
     });
 
     client.login(DISCORD_BOT_TOKEN);
