@@ -46,10 +46,13 @@ function getChannelStats(channelMessages) {
 
 function getUserData(messages) {
   const uniqueUsers = [...new Set(messages.map((msg) => msg.author))];
-  const userData = uniqueUsers.map((author) => ({
-    username: author.username,
-    avatarURL: author.displayAvatarURL(),
-  }));
+  const userData = uniqueUsers.reduce(
+    (obj, current) => ({
+      ...obj,
+      [current.username]: current.displayAvatarURL(),
+    }),
+    {}
+  );
 
   return userData;
 }
@@ -101,5 +104,7 @@ function getData() {
 // `getData`
 exports.handler = async (req, res) => {
   const data = await getData();
+  res.set("Access-Control-Allow-Methods", "GET");
+  res.set("Access-Control-Allow-Origin", "*");
   res.status(200).send(data);
 };
