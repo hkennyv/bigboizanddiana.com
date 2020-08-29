@@ -6,7 +6,8 @@
   "dependencies": {
     "@google-cloud/functions-framework": "^1.7.1",
     "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "prettier": "^2.1.1"
   },
   "scripts": {
     "start": "functions-framework --target=handler"
