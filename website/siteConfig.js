@@ -14,7 +14,7 @@ const siteConfig = {
   title: "Bigboizanddiana.com", // Title for your website.
   tagline: "gang gang gang",
   url: "https://hkennyv.github.io", // Your website URL
-  baseUrl: "/bigboizanddiana.com/", // Base URL for your project */
+  baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
