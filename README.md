@@ -87,4 +87,8 @@ yarn dev
 
 - your dev server should be up and running at [http://localhost:3000](http://localhost:3000)
 
-Please view the [web docs](web/index.md)
+Please view the [web docs](web/index.md).
+
+## Contributing
+
+To contribute, please follow the [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20Workflow%20is%20a%20Git,designed%20around%20the%20project%20release.&text=Gitflow%20is%20ideally%20suited%20for%20projects%20that%20have%20a%20scheduled%20release%20cycle.) workflow.
