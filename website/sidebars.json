@@ -1,0 +1,7 @@
+{
+  "docs": {
+    "Overview": ["overview/index"],
+    "API": ["api/index"],
+    "Web": ["web/index"]
+  }
+}

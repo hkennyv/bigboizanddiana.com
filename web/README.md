@@ -1,4 +1,7 @@
-# web
+---
+id: index
+title: web
+---
 
 ## Overview
 
