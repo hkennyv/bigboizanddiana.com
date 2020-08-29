@@ -14,6 +14,8 @@ This repository contains the code for the next revision of [bigboizanddiana.com]
 Currently, the old gatsby site is deployed (source code can be viewed on the [gatsbysite](https://github.com/hkennyv/bigboizanddiana.com/tree/gatsbysite) branch).
 We're aiming to rewrite the site so that we can show a visualization of the discord activity. It is built upon a serverless API function and a React/D3 frontend. There are also [docs](https://hkennyv.github.io/bigboizanddiana.com/docs/overview/index.html) available on how to get started with this project.
 
+View the docs [here](https://hkennyv.github.io/bigboizanddiana.com/docs/overview/index.html)!
+
 ## Architecture
 
 A high-level diagram is shown below:
@@ -91,4 +93,14 @@ Please view the [web docs](web/index.md).
 
 ## Contributing
 
-To contribute, please follow the [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20Workflow%20is%20a%20Git,designed%20around%20the%20project%20release.&text=Gitflow%20is%20ideally%20suited%20for%20projects%20that%20have%20a%20scheduled%20release%20cycle.) workflow.
+The tasks for this project are layed out in a kanban board attached to this repository.
+Select a task to work and promptly move it from the "To Do" column to the
+"In Progress" column. Once you've submitted a PR, it can be placed in the
+"Waiting/Pending Review" column. Once approved, we'll move it to the
+"Done" column. The "Backlog" column is for items that aren't necessarily on
+the roadmap right now, but could be important in the future possibly.
+
+View the board [here](https://github.com/hkennyv/bigboizanddiana.com/projects/1)!
+
+To contribute, please follow the [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20Workflow%20is%20a%20Git,designed%20around%20the%20project%20release.&text=Gitflow%20is%20ideally%20suited%20for%20projects%20that%20have%20a%20scheduled%20release%20cycle.) workflow. There are also some CI workflows
+setup to ensure code hygiene and passing builds.
