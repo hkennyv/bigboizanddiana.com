@@ -22,10 +22,18 @@ jobs:
           cd web
           yarn install
 
-      - name: Run linters
+      - name: Run prettier on web/
         uses: wearerequired/lint-action@v1
         with:
           github_token: ${{ secrets.github_token }}
           # Enable your linters here
           prettier: true
           prettier_dir: web/
+
+      - name: Run prettier on api/
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Enable your linters here
+          prettier: true
+          prettier_dir: api/
