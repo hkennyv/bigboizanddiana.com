@@ -13,15 +13,15 @@ const users = [];
 const siteConfig = {
   title: "Bigboizanddiana.com", // Title for your website.
   tagline: "gang gang gang",
-  url: "https://your-docusaurus-test-site.com", // Your website URL
-  baseUrl: "/", // Base URL for your project */
+  url: "https://hkennyv.github.io", // Your website URL
+  baseUrl: "/bigboizanddiana.com/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
   projectName: "bigboizanddiana.com",
-  organizationName: "bigboizanddiana",
+  organizationName: "hkennyv",
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
