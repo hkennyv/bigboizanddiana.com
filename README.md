@@ -12,9 +12,9 @@ title: bigboizanddiana.com
 
 This repository contains the code for the next revision of [bigboizanddiana.com](https://bigboizanddiana.com/).
 Currently, the old gatsby site is deployed (source code can be viewed on the [gatsbysite](https://github.com/hkennyv/bigboizanddiana.com/tree/gatsbysite) branch).
-We're aiming to rewrite the site so that we can show a visualization of the discord activity. It is built upon a serverless API function and a React/D3 frontend. There are also [docs](https://hkennyv.github.io/bigboizanddiana.com/docs/overview/index.html) available on how to get started with this project.
+We're aiming to rewrite the site so that we can show a visualization of the discord activity. It is built upon a serverless API function and a React/D3 frontend.
 
-View the docs [here](https://hkennyv.github.io/bigboizanddiana.com/docs/overview/index.html)!
+To get started, view the docs [here](https://hkennyv.github.io/bigboizanddiana.com/docs/overview/index.html)!
 
 ## Architecture
 
