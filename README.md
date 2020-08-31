@@ -1,6 +1,6 @@
 ---
 id: index
-title: bigboizanddiana.com
+title: README
 ---
 
 <p align="center">

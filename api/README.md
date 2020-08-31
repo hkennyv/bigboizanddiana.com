@@ -1,6 +1,6 @@
 ---
 id: index
-title: scraper
+title: Discord Scraper API
 ---
 
 ## Overiew
