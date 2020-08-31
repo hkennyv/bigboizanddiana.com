@@ -69,4 +69,100 @@ from a specified guild.</p>
 <tr><td>DISCORD_GUILD_ID</td><td>The guild ID of the guild you want to run the bot on</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bigboizanddiana.com/docs/overview/index"><span class="arrow-prev">← </span><span>bigboizanddiana.com</span></a><a class="docs-next button" href="/bigboizanddiana.com/docs/web/index"><span>web</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overiew">Overiew</a></li><li><a href="#environment">Environment</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bigboizanddiana.com/" class="nav-home"><img src="/bigboizanddiana.com/img/favicon.ico" alt="Bigboizanddiana.com" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bigboizanddiana.com/docs/overview/getting-started.html">Getting Started</a><a href="/bigboizanddiana.com/docs/api/index.html">API</a><a href="/bigboizanddiana.com/docs/web/index.html">Web</a></div><div><h5>More</h5><a href="https://github.com/hkennyv/bigboizanddiana.com">GitHub</a><a class="github-button" href="https://github.com/hkennyv/bigboizanddiana.com" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 bigboizanddiana</section></footer></div></body></html>
+<h2><a class="anchor" aria-hidden="true" id="api-response-structure"></a><a href="#api-response-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Response Structure</h2>
+<p>An example 200 response is shown below:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"channels"</span>: {
+            <span class="hljs-attr">"general"</span>: {
+                <span class="hljs-attr">"stats"</span>: {
+                    <span class="hljs-attr">"user1"</span>: <span class="hljs-number">10</span>,
+                    <span class="hljs-attr">"user2"</span>: <span class="hljs-number">15</span>,
+                    <span class="hljs-attr">"user3"</span>: <span class="hljs-number">5</span>,
+                    <span class="hljs-attr">"user4"</span>: <span class="hljs-number">3</span>,
+                    <span class="hljs-attr">"user5"</span>: <span class="hljs-number">1</span>
+                },
+                <span class="hljs-attr">"users"</span>: {
+                    <span class="hljs-attr">"user1"</span>: <span class="hljs-string">"https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp"</span>,
+                    <span class="hljs-attr">"user2"</span>: <span class="hljs-string">"https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp"</span>,
+                    <span class="hljs-attr">"user3"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>,
+                    <span class="hljs-attr">"user4"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>,
+                    <span class="hljs-attr">"user5"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>
+                }
+            },
+            <span class="hljs-attr">"random"</span>: {
+                <span class="hljs-attr">"stats"</span>: {
+                    <span class="hljs-attr">"user1"</span>: <span class="hljs-number">12</span>,
+                    <span class="hljs-attr">"user2"</span>: <span class="hljs-number">11</span>,
+                    <span class="hljs-attr">"user3"</span>: <span class="hljs-number">11</span>,
+                    <span class="hljs-attr">"user4"</span>: <span class="hljs-number">3</span>,
+                    <span class="hljs-attr">"user5"</span>: <span class="hljs-number">1</span>
+                },
+                <span class="hljs-attr">"users"</span>: {
+                    <span class="hljs-attr">"user1"</span>: <span class="hljs-string">"https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp"</span>,
+                    <span class="hljs-attr">"user2"</span>: <span class="hljs-string">"https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp"</span>,
+                    <span class="hljs-attr">"user3"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>,
+                    <span class="hljs-attr">"user4"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>,
+                    <span class="hljs-attr">"user5"</span>: <span class="hljs-string">"https://cdn.discordapp.com/embed/avatars/0.png"</span>
+                }
+            },
+        },
+        <span class="hljs-attr">"guild"</span>: <span class="hljs-string">"My sample guild"</span>,
+        <span class="hljs-attr">"guildIconURL"</span>: <span class="hljs-string">"https://cdn.discordapp.com/icons/XXXXXXXXXXXXXX/XXXXXXXXXXX.webp"</span>
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="example-working-with-the-api-response-object"></a><a href="#example-working-with-the-api-response-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example: Working with the API response object</h3>
+<p>We'll take the object above for example and store it in an object called
+<code>data</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">console</span>.log(data);
+
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   data: {</span>
+<span class="hljs-comment">//     channels: { general: [Object], random: [Object] },</span>
+<span class="hljs-comment">//     guild: 'My sample guild',</span>
+<span class="hljs-comment">//     guildIconURL: 'https://cdn.discordapp.com/icons/XXXXXXXXXXXXXX/XXXXXXXXXXX.webp'</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p>We can see that there's a single top-level key called <code>data</code> that contains all
+of the data. Accessing <code>data</code> gives us 3 more top-level keys:</p>
+<ul>
+<li><code>channels</code> - an object containing all of the stats and users for each channel</li>
+<li><code>guild</code> - the name of the guild (derived from DISCORD_GUILD_ID)</li>
+<li><code>guildIconURL</code> - a link to the guild's icon, so that the client doesn't have
+to fetch it (requires an authenticated request, we want to keep our client
+fairly stupid and let the backend do the heavy lifting)</li>
+</ul>
+<p>Let's say we want to get an array of all of the different channel objects:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> channels = <span class="hljs-built_in">Object</span>.keys(data.data.channels);
+
+<span class="hljs-comment">// [ 'general', 'random' ]</span>
+</code></pre>
+<p>If we want to print the data for a single channel, we can do this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> channel <span class="hljs-keyword">of</span> channels) {
+  <span class="hljs-built_in">console</span>.log(channel, data.data.channels[channel]);
+}
+
+<span class="hljs-comment">// general {</span>
+<span class="hljs-comment">//   stats: { user1: 10, user2: 15, user3: 5, user4: 3, user5: 1 },</span>
+<span class="hljs-comment">//   users: {</span>
+<span class="hljs-comment">//     user1: 'https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp',</span>
+<span class="hljs-comment">//     user2: 'https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp',</span>
+<span class="hljs-comment">//     user3: 'https://cdn.discordapp.com/embed/avatars/0.png',</span>
+<span class="hljs-comment">//     user4: 'https://cdn.discordapp.com/embed/avatars/0.png',</span>
+<span class="hljs-comment">//     user5: 'https://cdn.discordapp.com/embed/avatars/0.png'</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-comment">// random {</span>
+<span class="hljs-comment">//   stats: { user1: 12, user2: 11, user3: 11, user4: 3, user5: 1 },</span>
+<span class="hljs-comment">//   users: {</span>
+<span class="hljs-comment">//     user1: 'https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp',</span>
+<span class="hljs-comment">//     user2: 'https://cdn.discordapp.com/avatars/XXXXXXXXXXX/XXXXXXXXXXXXXX.webp',</span>
+<span class="hljs-comment">//     user3: 'https://cdn.discordapp.com/embed/avatars/0.png',</span>
+<span class="hljs-comment">//     user4: 'https://cdn.discordapp.com/embed/avatars/0.png',</span>
+<span class="hljs-comment">//     user5: 'https://cdn.discordapp.com/embed/avatars/0.png'</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bigboizanddiana.com/docs/overview/index"><span class="arrow-prev">← </span><span>bigboizanddiana.com</span></a><a class="docs-next button" href="/bigboizanddiana.com/docs/web/index"><span>web</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overiew">Overiew</a></li><li><a href="#environment">Environment</a></li><li><a href="#api-response-structure">API Response Structure</a><ul class="toc-headings"><li><a href="#example-working-with-the-api-response-object">Example: Working with the API response object</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bigboizanddiana.com/" class="nav-home"><img src="/bigboizanddiana.com/img/favicon.ico" alt="Bigboizanddiana.com" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bigboizanddiana.com/docs/overview/getting-started.html">Getting Started</a><a href="/bigboizanddiana.com/docs/api/index.html">API</a><a href="/bigboizanddiana.com/docs/web/index.html">Web</a></div><div><h5>More</h5><a href="https://github.com/hkennyv/bigboizanddiana.com">GitHub</a><a class="github-button" href="https://github.com/hkennyv/bigboizanddiana.com" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 bigboizanddiana</section></footer></div></body></html>
