@@ -3,7 +3,7 @@ name: gh-pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, hotfix/update-deploy-action ]
   pull_request:
     branches: [ hotfix/update-deploy-action ]
 
