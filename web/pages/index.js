@@ -1,54 +1,95 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import Head from 'next/head';
+import {Container} from 'semantic-ui-react';
+import DiscordStats from '../components/DiscordStats';
+import React, {Component} from 'react';
+import {Table} from 'semantic-ui-react'
 
-import { Container } from "semantic-ui-react";
 
-import DiscordStats from "../components/DiscordStats";
+const {API_URL} = process.env;
 
-export default function Home({ API_URL }) {
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    console.log("useEffect");
-    async function fetchData() {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      console.log(data);
-      setData(data);
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {
+                channels: {}
+
+            },
+            isLoading: true
+        }
     }
-    fetchData();
-  }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Big Boiz and Diana</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    componentDidMount = () => {
+        this.getDiscordServerData();
+    }
 
-      <Container>
-        <main>
-          <h1>Big Boiz and Diana</h1>
+    getDiscordServerData = () => {
+        fetch("http://localhost:8080")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        data: result.data,
+                        isLoading: false
+                    });
+                })
+    }
 
-          <p>
-            Join us in the <a>discord!</a>
-          </p>
-
-          <div>
-            <DiscordStats data={data} />
-          </div>
-        </main>
-      </Container>
-    </>
-  );
+    render() {
+        return (
+            <div>
+                <Head>
+                    <title>
+                        Big Boiz and Diana</title>
+                    <link rel="icon" href="/favicon.ico"/>
+                </Head>
+                <Container className={'uiContainer'}>
+                    <main>
+                        <div className={'headingTitleContainer'}>
+                            <h1>{this.state.data.guild}</h1>
+                            {/*<img  className="titleImage" src={this.state.data.guildIconURL}/>*/}
+                        </div>
+                        <p className={'titleSubHeading'}>
+                            Join us in the <a>discord!</a>
+                        </p>
+                        <div>
+                            {Object.keys(this.state.data.channels).map(channel => (
+                                <div className={'dataTableContainer'}>
+                                    <h2 style={{textAlign: 'center'}}> #{channel} </h2>
+                                    <Table celled className={'dataTable'}>
+                                        <Table.Header>
+                                            <Table.Row>
+                                                <Table.HeaderCell>Name</Table.HeaderCell>
+                                                <Table.HeaderCell>Contributions</Table.HeaderCell>
+                                            </Table.Row>
+                                        </Table.Header>
+                                        <Table.Body>
+                                            {Object.keys(this.state.data.channels[channel].stats).map(key => (
+                                                <Table.Row>
+                                                    <Table.Cell className={'userTableCell'}>
+                                                        <img className={'tableImage'} src={this.state.data.channels[channel].users[key]}/>
+                                                        <p> {key} </p>
+                                                    </Table.Cell>
+                                                    <Table.Cell><p>
+                                                        {this.state.data.channels[channel].stats[key]}</p>
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                            ))}
+                                        </Table.Body>
+                                    </Table>
+                                </div>
+                            ))}
+                            <DiscordStats data={this.state.data} isLoading={this.state.isLoading}/>
+                        </div>
+                    </main>
+                </Container>
+            </div>
+        );
+    }
 }
 
-export async function getStaticProps() {
-  const { API_URL } = process.env;
+Home.propTypes = {};
 
-  return {
-    props: {
-      API_URL,
-    },
-  };
-}
+export default Home;
+

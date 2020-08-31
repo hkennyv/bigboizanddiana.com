@@ -1,0 +1,45 @@
+.uiContainer {
+    background-color: #2C2F33;
+    color: #FFFFFF;
+    width: 100% !important;
+    padding: 2em;
+}
+
+.headingTitleContainer {
+    display: inline-flex;
+    padding-bottom: 2em;
+}
+
+
+.titleImage {
+    height: 80px;
+    width: 80px;
+    border-radius: 25em;
+}
+
+.dataTableContainer {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 3em;
+}
+
+.dataTable {
+    margin-top: 1em;
+}
+
+.tableImage {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 25em;
+}
+
+.userTableCell {
+    display: inline-flex;
+    width: 100%;
+}
+
+.userTableCell p {
+    padding-left: 1em;
+    padding-top: 10px;
+    font-weight: 80;
+}
