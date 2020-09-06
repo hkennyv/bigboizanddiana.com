@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="937c2e60-d54f-49de-88f2-787803f784a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/components/DiscordTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +34,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/styles" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -40,7 +50,9 @@
       <option name="presentableId" value="Default" />
       <updated>1598677387375</updated>
       <workItem from="1598677389931" duration="5550000" />
-      <workItem from="1598832729250" duration="9926000" />
+      <workItem from="1598832729250" duration="10179000" />
+      <workItem from="1598845511127" duration="112000" />
+      <workItem from="1599345757360" duration="5056000" />
     </task>
     <servers />
   </component>
@@ -52,5 +64,17 @@
       <screen x="0" y="25" width="1920" height="1002" />
     </state>
     <state x="684" y="332" key="#com.intellij.fileTypes.FileTypeChooser/1920.419.1440.875/0.25.1920.1002@0.25.1920.1002" timestamp="1598678841075" />
+    <state x="649" y="139" key="SettingsEditor" timestamp="1599347916880">
+      <screen x="0" y="25" width="1920" height="1002" />
+    </state>
+    <state x="649" y="139" key="SettingsEditor/0.25.1920.1002@0.25.1920.1002" timestamp="1599347916880" />
+    <state x="508" y="243" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599349099923">
+      <screen x="0" y="25" width="1920" height="1002" />
+    </state>
+    <state x="508" y="243" key="git4idea.branch.GitSmartOperationDialog/0.25.1920.1002@0.25.1920.1002" timestamp="1599349099923" />
+    <state x="625" y="246" width="670" height="676" key="search.everywhere.popup" timestamp="1599349757239">
+      <screen x="0" y="25" width="1920" height="1002" />
+    </state>
+    <state x="625" y="246" width="670" height="676" key="search.everywhere.popup/0.25.1920.1002@0.25.1920.1002" timestamp="1599349757239" />
   </component>
 </project>

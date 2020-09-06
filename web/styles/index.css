@@ -2,6 +2,7 @@
     background-color: #2C2F33;
     color: #FFFFFF;
     width: 100% !important;
+    min-height: 100vh;
     padding: 2em;
 }
 
@@ -42,4 +43,9 @@
     padding-left: 1em;
     padding-top: 10px;
     font-weight: 80;
+}
+
+.activeChannelButton{
+   background-color: #7289DA !important;
+    color:white !important;
 }
