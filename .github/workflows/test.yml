@@ -3,8 +3,8 @@ name: test
 on: push
 
 jobs:
-  run-linters:
-    name: run test runner
+  test:
+    name: execute test runners
     runs-on: ubuntu-latest
 
     steps:
@@ -39,5 +39,5 @@ jobs:
 
       - name: Run tests for api/
         run: |
-          cd web
+          cd api
           yarn test:coverage
