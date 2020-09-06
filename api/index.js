@@ -48,6 +48,7 @@ function getUserData(messages) {
   const userData = uniqueUsers.reduce(
     (obj, current) => ({
       ...obj,
+
       [current.username]: current.displayAvatarURL(),
     }),
     {}

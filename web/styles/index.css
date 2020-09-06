@@ -1,0 +1,50 @@
+.uiContainer {
+  background-color: #2c2f33;
+  color: #ffffff;
+  width: 100% !important;
+  min-height: 100vh;
+  padding: 2em;
+}
+
+.headingTitleContainer {
+  display: inline-flex;
+  padding-bottom: 2em;
+}
+
+.titleImage {
+  height: 80px;
+  width: 80px;
+  border-radius: 25em;
+}
+
+.dataTableContainer {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 3em;
+}
+
+.dataTable {
+  margin-top: 1em;
+}
+
+.tableImage {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 25em;
+}
+
+.userTableCell {
+  display: inline-flex;
+  width: 100%;
+}
+
+.userTableCell p {
+  padding-left: 1em;
+  padding-top: 10px;
+  font-weight: 80;
+}
+
+.activeChannelButton {
+  background-color: #7289da !important;
+  color: white !important;
+}
