@@ -1,0 +1,43 @@
+name: test
+
+on: push
+
+jobs:
+  run-linters:
+    name: run test runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # Install your linters here
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies for web/
+        run: |
+          cd web
+          yarn install
+
+      - name: Run tests for web/
+        run: |
+          cd web
+          yarn test:coverage
+
+      - name: Build web/
+        run: |
+          cd web
+          yarn build
+
+      - name: Install dependencies for api/
+        run: |
+          cd api
+          yarn install
+
+      - name: Run tests for api/
+        run: |
+          cd web
+          yarn test:coverage
