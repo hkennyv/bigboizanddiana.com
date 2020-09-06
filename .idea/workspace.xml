@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="937c2e60-d54f-49de-88f2-787803f784a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/components/DiscordTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
       <workItem from="1598677389931" duration="5550000" />
       <workItem from="1598832729250" duration="10179000" />
       <workItem from="1598845511127" duration="112000" />
-      <workItem from="1599345757360" duration="5056000" />
+      <workItem from="1599345757360" duration="5209000" />
     </task>
     <servers />
   </component>
