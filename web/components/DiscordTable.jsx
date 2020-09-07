@@ -20,7 +20,7 @@ class DiscordTable extends Component {
               </Table.Header>
               <Table.Body>
                 {Object.keys(this.props.channelData.stats).map((key) => (
-                  <Table.Row>
+                  <Table.Row key={key}>
                     <Table.Cell className={"userTableCell"}>
                       <img
                         className={"tableImage"}
