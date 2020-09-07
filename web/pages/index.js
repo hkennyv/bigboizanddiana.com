@@ -62,6 +62,7 @@ class Home extends Component {
                   // when you click a button, it changes active button in state, telling the discordtable component to render
                   // data for that channel
                   <button
+                    key={key}
                     onClick={(e) => this.tableButtonPress(key)}
                     className={
                       "ui button" +

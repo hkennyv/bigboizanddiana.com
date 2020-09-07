@@ -100,6 +100,8 @@ function getData() {
   });
 }
 
+exports.getChannelStats = getChannelStats;
+
 // TODO: modify this to take in a date-range query params and pass that to
 // `getData`
 exports.handler = async (req, res) => {
