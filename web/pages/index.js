@@ -1,9 +1,9 @@
+import React, { Component } from "react";
 import Head from "next/head";
 import { Container } from "semantic-ui-react";
-import DiscordStats from "../components/DiscordStats";
-import React, { Component } from "react";
-import { Table } from "semantic-ui-react";
-import DiscordTable from "../components/DiscordTable";
+
+import DiscordHeader from "../components/DiscordHeader";
+import DiscordData from "../components/DiscordData";
 
 const { API_URL } = process.env;
 
@@ -48,41 +48,14 @@ class Home extends Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Container className={"uiContainer"}>
+          <header>
+            <DiscordHeader guild={this.state.data.guild} />
+          </header>
           <main>
-            <div className={"headingTitleContainer"}>
-              <h1>{this.state.data.guild}</h1>
-            </div>
-            <p className={"titleSubHeading"}>
-              Join us in the <a>discord!</a>
-            </p>
-            <div>
-              {/* Loops through data, and renders a button for every channel in this.state.data*/}
-              <div className={"buttonContainer"}>
-                {Object.keys(this.state.data.channels).map((key) => (
-                  // when you click a button, it changes active button in state, telling the discordtable component to render
-                  // data for that channel
-                  <button
-                    key={key}
-                    onClick={(e) => this.tableButtonPress(key)}
-                    className={
-                      "ui button" +
-                      (this.state.activeTable === key
-                        ? " activeChannelButton"
-                        : "")
-                    }
-                  >
-                    {" "}
-                    {key}{" "}
-                  </button>
-                ))}
-              </div>
-              <DiscordTable
-                activeTable={this.state.activeTable}
-                channelData={this.state.data.channels[this.state.activeTable]}
-                isLoading={this.state.isLoading}
-              />
-              {/*<DiscordStats data={this.state.data} isLoading={this.state.isLoading}/>*/}
-            </div>
+            <DiscordData
+              data={this.state.data}
+              isLoading={this.state.isLoading}
+            />
           </main>
         </Container>
       </div>
