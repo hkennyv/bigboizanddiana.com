@@ -21,6 +21,7 @@ jobs:
           runtime: nodejs12
           credentials: ${{ secrets.gcp_credentials }}
           source_dir: ./api
+          entry_point: handler
 
       # Example of using the output
       - id: test
