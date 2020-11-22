@@ -17,7 +17,7 @@ jobs:
           name: scraper
           runtime: nodejs12
           credentials: ${{ secrets.gcp_credentials }}
-          source_dir: ./api
+          # source_dir: ./api
 
       # Example of using the output
       - id: test
