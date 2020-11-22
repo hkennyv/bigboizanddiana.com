@@ -47,7 +47,10 @@ class Home extends Component {
          */}
         <Container className={"uiContainer"}>
           <header>
-            <DiscordHeader guild={this.state.data.guild} />
+            <DiscordHeader
+              headerImage={this.state.data.guildIconURL}
+              guild={this.state.data.guild}
+            />
           </header>
           <main>
             <DiscordData

@@ -25,13 +25,45 @@ body {
   color: #ffffff;
   width: 100% !important;
   min-height: 100vh;
-  padding: 2em;
+  padding: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .uiContainer {
+    padding: 2em;
+  }
+}
+
+/* DiscordHeader */
+
+.titleHeading {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
 }
 
 .titleImage {
-  height: 80px;
-  width: 80px;
-  border-radius: 25em;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.titleText {
+  font-size: 1em;
+  margin-left: 1em;
+  margin-top: 0em !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .titleText {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .titleText {
+    font-size: 2.5em;
+  }
 }
 
 /* DiscordTable */
