@@ -6,11 +6,6 @@
   padding: 2em;
 }
 
-.headingTitleContainer {
-  display: inline-flex;
-  padding-bottom: 2em;
-}
-
 .titleImage {
   height: 80px;
   width: 80px;
@@ -44,7 +39,24 @@
   font-weight: 80;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .activeChannelButton {
   background-color: #7289da !important;
   color: white !important;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0em;
+}
+
+main {
+  flex-grow: 1;
+  height: 100%;
 }

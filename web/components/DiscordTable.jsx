@@ -4,13 +4,17 @@ import { Table } from "semantic-ui-react";
 
 class DiscordTable extends Component {
   render() {
+    console.log(this.props.channelData);
     return (
       <div>
         {this.props.isLoading === true ? (
           <div />
         ) : (
           <div className={"dataTableContainer"}>
-            <h2 style={{ textAlign: "center" }}> #{this.props.activeTable} </h2>
+            <h2 style={{ textAlign: "center" }}>
+              {" "}
+              #{this.props.activeChannel}
+            </h2>
             <Table celled className={"dataTable"}>
               <Table.Header>
                 <Table.Row>
@@ -43,6 +47,10 @@ class DiscordTable extends Component {
   }
 }
 
-DiscordTable.propTypes = {};
+DiscordTable.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  activeChannel: PropTypes.string.isRequired,
+  channelData: PropTypes.object.isRequired,
+};
 
 export default DiscordTable;
