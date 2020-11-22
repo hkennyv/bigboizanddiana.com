@@ -21,6 +21,7 @@ jobs:
           credentials: ${{ secrets.gcp_credentials }}
           source_dir: ./api
           entry_point: handler
+          max_instances: 3
 
       # Example of using the output
       - id: test
