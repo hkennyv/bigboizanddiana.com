@@ -1,13 +1,15 @@
 # This workflow publishes the nodejs function to gcloud
 name: gcloud-publish
 
-on: push
+on:
+  push
   # push:
-    # branches:
-    #   - master
+  # branches:
+  #   - master
 
 jobs:
   publish-nodejs-function:
+    runs-on: ubuntu-latest
     steps:
       - id: deploy
         uses: google-github-actions/deploy-cloud-functions@main
