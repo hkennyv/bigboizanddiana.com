@@ -1,0 +1,22 @@
+# This workflow publishes the nodejs function to gcloud
+name: gcloud-publish
+
+on: push
+  # push:
+    # branches:
+    #   - master
+
+jobs:
+  publish-nodejs-function:
+    steps:
+      - id: deploy
+        uses: google-github-actions/deploy-cloud-functions@main
+        with:
+          name: scraper
+          runtime: nodejs12
+          credentials: ${{ secrets.gcp_credentials }}
+          source_dir: api/
+
+      # Example of using the output
+      - id: test
+        run: curl "${{ steps.deploy.outputs.url }}"

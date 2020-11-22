@@ -5,7 +5,7 @@ import Meta from "../components/Meta";
 import DiscordHeader from "../components/DiscordHeader";
 import DiscordData from "../components/DiscordData";
 
-const { API_URL } = process.env;
+const { NEXT_PUBLIC_API_URL } = process.env;
 
 class Home extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Home extends Component {
   };
 
   getDiscordServerData = () => {
-    fetch("http://localhost:8080")
+    fetch(NEXT_PUBLIC_API_URL)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
