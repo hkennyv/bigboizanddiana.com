@@ -25,10 +25,10 @@ function DiscordData({ data, isLoading }) {
         activeChannel={activeChannel}
         setActiveChannel={setActiveChannel}
       />
+      <h2>#{activeChannel}</h2>
       <DiscordTable
         activeChannel={activeChannel}
         channelData={data.channels[activeChannel]}
-        isLoading={isLoading}
       />
     </>
   );
