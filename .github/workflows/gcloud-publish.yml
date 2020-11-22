@@ -2,10 +2,9 @@
 name: gcloud-publish
 
 on:
-  push
-  # push:
-  # branches:
-  #   - master
+  push:
+    branches:
+      - master
 
 jobs:
   publish-nodejs-function:
