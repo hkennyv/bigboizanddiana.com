@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Head from "next/head";
 import { Container } from "semantic-ui-react";
 
+import Meta from "../components/Meta";
 import DiscordHeader from "../components/DiscordHeader";
 import DiscordData from "../components/DiscordData";
 
-const { API_URL } = process.env;
+const { NEXT_PUBLIC_API_URL } = process.env;
 
 class Home extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class Home extends Component {
         channels: {},
       },
       isLoading: true,
-      activeTable: "general",
     };
   }
 
@@ -24,7 +23,7 @@ class Home extends Component {
   };
 
   getDiscordServerData = () => {
-    fetch("http://localhost:8080")
+    fetch(NEXT_PUBLIC_API_URL)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -34,22 +33,24 @@ class Home extends Component {
       });
   };
 
-  tableButtonPress = (tableName) => {
-    this.setState({
-      activeTable: tableName,
-    });
-  };
-
   render() {
     return (
       <div>
-        <Head>
-          <title>Big Boiz and Diana</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+        {/* meta takes care of <head> section */}
+        <Meta
+          title={this.state.data.guild}
+          favicon={this.state.data.guildIconURL}
+        />
+        {/*
+         * main container that contains the <header> and the <main> sections
+         * all data and plots go in the DiscordData component to render
+         */}
         <Container className={"uiContainer"}>
           <header>
-            <DiscordHeader guild={this.state.data.guild} />
+            <DiscordHeader
+              headerImage={this.state.data.guildIconURL}
+              guild={this.state.data.guild}
+            />
           </header>
           <main>
             <DiscordData
